@@ -1,54 +1,45 @@
-#Importing Libraries
 import streamlit as st
-import requests
-from bs4 import BeautifulSoup
-from sentence_transformers import SentenceTransformer
-from transformers import pipeline
 from langchain_community.document_loaders import WebBaseLoader
+
 from chains import Chain
 from portfolio import Portfolio
 from utils import clean_text
-import json
+
 
 def create_streamlit_app(llm, portfolio, clean_text):
-    # --- UI Header ---
-    st.title("📧 Cold Message Generator")
-    st.write("Turn job postings into personalized cold emails to reach out to companies.")
+    st.title("📧 Cold Mail Generator")
+    url_input = st.text_input("Enter a URL:", value="https://jobs.nike.com/job/R-33460")
+    submit_button = st.button("Submit")
 
-    # --- Input Section ---
-    job_url = st.text_input("🔗 Enter the Job Description URL", placeholder="Paste job description link here...")
+    if submit_button:
+        try:
+            loader = WebBaseLoader([url_input])
+            docs = loader.load()
+            if not docs:
+                st.error("No content could be loaded from the provided URL.")
+                return
+            data = clean_text(docs.pop().page_content)
 
-    if st.button("Generate Cold Email"):
-        if job_url.strip():
-            try:
-                pf = Portfolio()
-                loader = WebBaseLoader([job_url])
-                data = clean_text(loader.load().pop().page_content)
-                print(data)
-                pf.add_to_vector_store()
-                ch = Chain()
-                jobs = ch.extract_jobs(data)
-                print(jobs)
-                skills = jobs['skills']['technical_skills']
-                job_description = jobs['description']
-                skills = " ".join(skills)
-                print("Skills String", skills)
-                links = pf.query_portfolio(skills)
-                link_list = [link['links'] for link in links if 'links' in link]
-                print(type(link_list))
-                print("Link List", link_list)
-                link_list = " , ".join(link_list)
-                print("Link List String", link_list)
-                email = ch.write_email(job_description, link_list)
-                print("Generated Email", email)
+            # Ensure portfolio vectors exist
+            portfolio.add_to_vector_store()
+
+            jobs = llm.extract_jobs(data)
+            # Normalize response to a list if needed
+            if not isinstance(jobs, list):
+                jobs = [jobs]
+
+            for job in jobs:
+                skills = job.get('skills', []) if isinstance(job, dict) else []
+                links = portfolio.query_portfolio(skills)
+                email = llm.write_email(job, links)
                 st.code(email, language='markdown')
+        except Exception as e:
+            st.error(f"An Error Occurred: {e}")
 
 
-            except Exception as e:
-                st.error(f"An error occurred: {str(e)}")
-
-if __name__ =="__main__":
+if __name__ == "__main__":
     chain = Chain()
     portfolio = Portfolio()
-    st.set_page_config(layout="wide", page_title="Cold Message Generator", page_icon="📧")
+    st.set_page_config(layout="wide", page_title="Cold Email Generator", page_icon="📧")
     create_streamlit_app(chain, portfolio, clean_text)
+

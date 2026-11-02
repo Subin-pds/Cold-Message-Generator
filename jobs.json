@@ -1,0 +1,119 @@
+{
+  "jobs": [
+    {
+      "role": "Nhn vin vn hnh my cp cao",
+      "description": "Nike is seeking a skilled professional for a manufacturing engineering role in Vietnam. The job involves working with high-tech machinery and ensuring efficient production processes. The ideal candidate will have experience in manufacturing engineering and be able to work in a fast-paced environment.",
+      "skills": {
+        "technical_skills": ["manufacturing engineering", "high-tech machinery"],
+        "soft_skills": ["problem-solving", "communication"]
+      },
+      "experience": {
+        "years": "not specified",
+        "industry": "manufacturing"
+      },
+      "certifications": "not specified",
+      "location": {
+        "city": "Nng",
+        "country": "Vietnam"
+      },
+      "salary": "not specified",
+      "other_requirements": "not specified"
+    },
+    {
+      "role": "Maintenance Technician",
+      "description": "Nike is seeking a maintenance technician for a night shift position in Belgium. The job involves performing maintenance tasks and ensuring the smooth operation of production equipment. The ideal candidate will have experience in maintenance and be able to work in a team environment.",
+      "skills": {
+        "technical_skills": ["maintenance", "production equipment"],
+        "soft_skills": ["teamwork", "problem-solving"]
+      },
+      "experience": {
+        "years": "not specified",
+        "industry": "manufacturing"
+      },
+      "certifications": "not specified",
+      "location": {
+        "city": "Laakdal",
+        "country": "Belgium"
+      },
+      "salary": "not specified",
+      "other_requirements": "not specified"
+    },
+    {
+      "role": "Maintenance Technician",
+      "description": "Nike is seeking a maintenance technician for a position in California, USA. The job involves performing maintenance tasks and ensuring the smooth operation of production equipment. The ideal candidate will have experience in maintenance and be able to work in a fast-paced environment.",
+      "skills": {
+        "technical_skills": ["maintenance", "production equipment"],
+        "soft_skills": ["problem-solving", "communication"]
+      },
+      "experience": {
+        "years": "not specified",
+        "industry": "manufacturing"
+      },
+      "certifications": "not specified",
+      "location": {
+        "city": "Foothill Ranch",
+        "state": "California",
+        "country": "USA"
+      },
+      "salary": "not specified",
+      "other_requirements": "not specified"
+    },
+    {
+      "role": "Maintenance Technician",
+      "description": "Nike is seeking a maintenance technician for an early morning shift position in Belgium. The job involves performing maintenance tasks and ensuring the smooth operation of production equipment. The ideal candidate will have experience in maintenance and be able to work in a team environment.",
+      "skills": {
+        "technical_skills": ["maintenance", "production equipment"],
+        "soft_skills": ["teamwork", "problem-solving"]
+      },
+      "experience": {
+        "years": "not specified",
+        "industry": "manufacturing"
+      },
+      "certifications": "not specified",
+      "location": {
+        "city": "Laakdal",
+        "country": "Belgium"
+      },
+      "salary": "not specified",
+      "other_requirements": "not specified"
+    },
+    {
+      "role": "Maintenance Manager",
+      "description": "Nike is seeking a maintenance manager for a day shift position in Belgium. The job involves overseeing maintenance tasks and ensuring the smooth operation of production equipment. The ideal candidate will have experience in maintenance management and be able to lead a team.",
+      "skills": {
+        "technical_skills": ["maintenance management", "production equipment"],
+        "soft_skills": ["leadership", "problem-solving"]
+      },
+      "experience": {
+        "years": "not specified",
+        "industry": "manufacturing"
+      },
+      "certifications": "not specified",
+      "location": {
+        "city": "Laakdal",
+        "country": "Belgium"
+      },
+      "salary": "not specified",
+      "other_requirements": "not specified"
+    },
+    {
+      "role": "Intralogistics Integration Commissioning Technician",
+      "description": "Nike is seeking an intralogistics integration commissioning technician for a position in England, UK. The job involves integrating and commissioning intralogistics systems and ensuring their smooth operation. The ideal candidate will have experience in intralogistics and be able to work in a fast-paced environment.",
+      "skills": {
+        "technical_skills": ["intralogistics", "system integration"],
+        "soft_skills": ["problem-solving", "communication"]
+      },
+      "experience": {
+        "years": "not specified",
+        "industry": "manufacturing"
+      },
+      "certifications": "not specified",
+      "location": {
+        "city": "Corby",
+        "country": "England, UK"
+      },
+      "salary": "not specified",
+      "other_requirements": "not specified"
+    }
+  ]
+}
